@@ -1,0 +1,6 @@
+def pom = "0.0.5-SNAPSHOT"
+def version = pom.replace("-SNAPSHOT", "")
+def split = version.split('\\.')
+split[2]=++Integer.parseInt(split[2])
+def hoal = split.join('.') + "-SNAPSHOT"
+print hoal
