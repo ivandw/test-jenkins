@@ -13,17 +13,11 @@ tool:
           installers:
             - maven:
                 id: "3.5.4"
-  jdk:
-    defaultProperties:
-    - installSource:
-        installers:
-        - jdkInstaller:
-            acceptLicense: false
 plugins:
   proxy:
     name: "asadasd"
     noProxyHost: "asdasdasdasd,localhost"
-    port: 80
+    port: "80"
   sites:
   - id: "default"
     url: "https://updates.jenkins.io/update-center.json"
