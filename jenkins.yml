@@ -1,0 +1,19 @@
+plugins:
+  proxy:
+    name: "asadasd"
+    noProxyHost: "asdasdasdasd,localhost"
+    port: 80
+  sites:
+  - id: "default"
+    url: "https://updates.jenkins.io/update-center.json"
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  jdk:
+    defaultProperties:
+    - installSource:
+        installers:
+        - jdkInstaller:
+            acceptLicense: false
