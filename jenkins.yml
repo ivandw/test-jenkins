@@ -1,3 +1,24 @@
+jenkins:
+  systemMessage: "wooow"
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  maven:
+    installations:
+    - name: "Maven 3"
+      properties:
+      - installSource:
+          installers:
+            - maven:
+                id: "3.5.4"
+  jdk:
+    defaultProperties:
+    - installSource:
+        installers:
+        - jdkInstaller:
+            acceptLicense: false
 plugins:
   proxy:
     name: "asadasd"
@@ -6,14 +27,3 @@ plugins:
   sites:
   - id: "default"
     url: "https://updates.jenkins.io/update-center.json"
-tool:
-  git:
-    installations:
-    - home: "git"
-      name: "Default"
-  jdk:
-    defaultProperties:
-    - installSource:
-        installers:
-        - jdkInstaller:
-            acceptLicense: false
