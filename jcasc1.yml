@@ -1,0 +1,39 @@
+plugins:
+  proxy:
+    name: "app-proxy.bancogalicia.com.ar"
+    noProxyHost: "localhost,127.0.0.1,*.bancogalicia.com.ar,*.cluster.local,*.svc,10.254.16.0/20,10.254.32.0/20,10.0.78.0/24"
+    port: 80
+  sites:
+  - id: "default"
+    url: "https://updates.jenkins.io/update-center.json"
+  required:
+    maven-plugin:latest
+    pipeline-maven:latest
+    configuration-as-code:latest
+jenkins:
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - fileSystemServiceAccountCredential:
+          id: "1a12dfa4-7fc5-47a7-aa17-cc56572a41c7"
+          scope: GLOBAL
+      - usernamePassword:
+          id: "gitlab"
+          password: "{AQAAABAAAAAQf/RhNRzxdgbLfRKj0Xp4rhUvwNIfB0GytMIaMRIaQpU=}"
+          scope: GLOBAL
+          username: "naguer"
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  jdk:
+    defaultProperties:
+    - installSource:
+        installers:
+        - jdkInstaller:
+            acceptLicense: false
